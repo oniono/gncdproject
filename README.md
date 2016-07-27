@@ -15,9 +15,9 @@ Peer Graded Assignment: Getting and Cleaning Data Course Project
 
 1. Merges the training and the test data
 
-    library(plyr)
-    data <- rbind(trainData, testData)
-    data <- arrange(data, id)
+    'library(plyr)'
+    'data <- rbind(trainData, testData)'
+    'data <- arrange(data, id)'
 
 2. Extracts the mean and standard deviation
 
