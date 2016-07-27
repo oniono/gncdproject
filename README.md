@@ -22,6 +22,7 @@ Peer Graded Assignment: Getting and Cleaning Data Course Project
 2. Extracts the mean and standard deviation
 
     meanStd <- data[,c(1,2,grep("std", colnames(data)), grep("mean", colnames(data)))]
+    
     saveResults(meanStd, "meanStd")
 
 3. Uses descriptive activity names to name the activities in the data set
@@ -35,6 +36,8 @@ Peer Graded Assignment: Getting and Cleaning Data Course Project
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
     tidyDataset <- ddply(meanStd, .(id, activity), .fun=function(x){ colMeans(x[,-c(1:2)]) })
+    
     colnames(tidyDataset)[-c(1:2)] <- paste(colnames(tidyDataset)[-c(1:2)], "_mean", sep="")
+    
     saveResults(tidyDataset, "tidyDataset")
 
